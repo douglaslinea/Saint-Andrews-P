@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /.settings
+Disallow: /admin
+Disallow: /bkp-db
+Disallow: /bkp-ftp
+Disallow: /system
+
+Sitemap: http://www.dominio.com/sitemap.xml

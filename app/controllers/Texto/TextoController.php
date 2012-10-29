@@ -1,0 +1,31 @@
+<?php
+   /**
+    * Controller Texto
+	* @author Linea Comunicação com Design - http://www.lineacom.com.br
+    *
+    */
+   class TextoController extends ControllerBase{
+   	
+        /* Método Construtor do Controller(Obrigatório Conter em Todos os Controllers)
+		 * Params String Action -> Ação a ser Executada Pelo Controller	 	
+		 * Atenção Demais Métodos do Controller Devem ser Privados 
+		*/
+		public function TextoController($controller,$action,$urlparams){
+			 //Inicializa os parâmetros da SuperClasse
+			 parent::ControllerBase($controller, $action,$urlparams);			 
+			 //Envia o Controller para a action solicitada
+			 $this->$action();           
+		}
+		
+		/**
+	    * Ações Iniciais ao Entrar na Index deste Controller
+	    */
+	   private function index_action(){
+	   				
+	   		//Apresenta a view
+		   	$this->View()->display('index.php');
+	   }
+	   
+	   
+}
+?>
