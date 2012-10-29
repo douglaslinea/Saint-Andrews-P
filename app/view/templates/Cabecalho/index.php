@@ -109,10 +109,11 @@ $(function(){
 <section id="idiomas" class="clearfix">
 	<div class="head-idiomas">
 
-    <a href="{view}$LANGUAGE_LINKS{/view}idioma/pt-br" class="ativo">Português</a> | 
-    <a href="{view}$LANGUAGE_LINKS{/view}idioma/en-us">English</a> | 
-    <a href="{view}$LANGUAGE_LINKS{/view}idioma/es">Español</a>
-  
+            <!-- {view}if $idiommas=="pt-br"{/view} class="ativo" {view}/if{/view} -->
+    <a href="{view}$LANGUAGE_LINKS{/view}idioma/pt-br" {view}if $idiommas=="pt-br"{/view} class="ativo" {view}/if{/view}>Português</a> | 
+    <a href="{view}$LANGUAGE_LINKS{/view}idioma/en-us"{view}if $idiommas=="en-us"{/view} class="ativo" {view}/if{/view} >English</a> | 
+    <a href="{view}$LANGUAGE_LINKS{/view}idioma/es"{view}if $idiommas=="es"{/view} class="ativo" {view}/if{/view} >Español</a>
+
         </div>
 </section>
 

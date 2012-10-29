@@ -276,6 +276,8 @@ Abstract class ControllerBase {
                 $concatenar .= $key . "/" . $para . "/";
             }
         }
+        
+         $this->view->assign("idiommas", $parametros['idioma']);
          $this->view->assign("LANGUAGE_LINKS", DEFAULT_URL . $this->controller . "/" . ($this->action == 'index_action' ? 'index' : $this->action) . "/" . $concatenar);
         ############ FIM VERIFICA��O IDIOMAS DISPONIVEIS  ############		
     }
