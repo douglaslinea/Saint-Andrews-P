@@ -14,8 +14,8 @@
 	<div class="footer-info">
 	<span class="copy">{view}$textos_layout[50]{/view}</span><br /><br />
 
-        {view}$textos_layout[51]{/view}: {view}$DADOS_ENDERECO.txt_telefone{/view}  /  0800 644 8088  /  <a href="mailto:reservas@saintandrews.com.br" target="_blank">reservas@saintandrews.com.br</a><br />
-       {view}$DADOS_ENDERECO.txt_endereco{/view} - {view}$DADOS_ENDERECO.txt_bairro{/view} - {view}$DADOS_ENDERECO.txt_cidade{/view}, {view}$DADOS_ENDERECO.cha_sigla{/view} - CEP {view}$DADOS_ENDERECO.txt_cep{/view}
+        {view}$textos_layout[51]{/view}: {view}$DADOS_ENDERECO.telefone_contato{/view}  / {view}$DADOS_ENDERECO.telefone_hotel{/view}  /  <a href="mailto:{view}$DADOS_ENDERECO.email_hotel{/view}" target="_blank">{view}$DADOS_ENDERECO.email_hotel{/view}</a><br />
+       {view}$DADOS_ENDERECO.txt_endereco{/view} - {view}$DADOS_ENDERECO.txt_bairro{/view} -]{/view}: {view}$DADOS_ENDERECO.telefone_contato{/view}  / {view}$DADOS_ENDERECO.telefone_hotel{/view} {view}$DADOS_ENDERECO.txt_cidade{/view}, {view}$DADOS_ENDERECO.cha_sigla{/view} - CEP {view}$DADOS_ENDERECO.txt_cep{/view}
     </div>
     
 </section>

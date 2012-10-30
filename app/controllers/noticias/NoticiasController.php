@@ -1,11 +1,11 @@
 <?php
-class NoticiaController extends ControllerBase
+class NoticiasController extends ControllerBase
 {
 	/* M�todo Construtor do Controller(Obrigat�rio Conter em Todos os Controllers)
 	 * Params String Action -> A��o a ser Executada Pelo Controller
 	 * Aten��o Demais M�todos do Controller Devem ser Privados
 	 */
-	public function NoticiaController($controller,$action,$urlparams)
+	public function NoticiasController($controller,$action,$urlparams)
 	{
 		//Inicializa os par�metros da SuperClasse
 		parent::ControllerBase($controller, $action,$urlparams);
@@ -16,7 +16,7 @@ class NoticiaController extends ControllerBase
 	private function index_action()
 	{
 		//Solicita os dados
-		$resultado = $this->Delegator('ConcreteNoticia', 'SelectNoticias');
+		$resultado = $this->Delegator('ConcreteNoticias', 'SelectNoticias');
 		
 		//Coloca o Helper na View
 	   	$this->View()->assign('Helper',HelperFactory::getInstance());
@@ -40,7 +40,7 @@ class NoticiaController extends ControllerBase
 			$permalink = HelperFactory::getInstance()->getPermalink(true);
 			
 			//Seleciona os dados do id
-			$resultado = $this->Delegator('ConcreteNoticia', 'SelectNoticiasId', array('permalink' => $permalink));
+			$resultado = $this->Delegator('ConcreteNoticias', 'SelectNoticiasId', array('permalink' => $permalink));
 			
 			//Verifica se tem dados
 			if($resultado !== false)
@@ -49,7 +49,7 @@ class NoticiaController extends ControllerBase
 				$this->View()->assign('dados_noticias',$resultado);
 				
 				//Seleciona mais cinco dados tirando o j� selecionado
-				$resultado_mais_dados = $this->Delegator('ConcreteNoticia', 'SelectMaisNoticias', array('permalink' => $permalink));
+				$resultado_mais_dados = $this->Delegator('ConcreteNoticias', 'SelectMaisNoticias', array('permalink' => $permalink));
 				
 				//Coloca o Helper na View
 	   			$this->View()->assign('Helper',HelperFactory::getInstance());

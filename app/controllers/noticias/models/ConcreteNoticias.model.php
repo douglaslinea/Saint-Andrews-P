@@ -7,7 +7,7 @@
  * @author Linea Comunica��o - http://www.lineacom.com.br
  *
  */
-class ConcreteNoticia extends ImprensaNoticias
+class ConcreteNoticias extends ImprensaNoticias
 {
 public function SelectNoticias()
 {
