@@ -34,7 +34,7 @@ class ContatosHoteis extends BaseContatosHoteis {
             $con = Doctrine_Manager::getInstance()->connection();
             $sth = $con->execute("SELECT co.*, cc.txt_cidade, cu.txt_uf, cu.cha_sigla, ht.*
                                    FROM " . $this->table_alias . ", cepCidades cc, websiteIdiomas wi, hoteis ht, cepUf cu
-                                   WHERE co.cod_cidade = cc.cod_id AND co.cod_idioma = wi.cod_id AND co.cod_hotel = ht.cod_relacao_idioma AND co.cod_estado =  cu.cod_id group by co.cod_id");
+                                   WHERE  co.cod_cidade = cc.cod_id AND co.cod_idioma = wi.cod_id AND co.cod_hotel = ht.cod_relacao_idioma AND co.cod_estado =  cu.cod_id group by co.cod_id");
 
             $resultado = $sth->fetchAll();
 

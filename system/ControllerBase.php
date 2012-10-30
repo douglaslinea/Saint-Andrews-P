@@ -272,17 +272,19 @@ Abstract class ControllerBase {
 
 ############DEFININDO TODOS OS LINKS DOS IDIOMAS DISPONIVEIS ############
         $parametros = $this->getParam();
+        print_r($parametros);
         $concatenar = "";
-
+    
         foreach ($parametros as $key => $para) {
             if ($key != "idioma") {
 
                 $concatenar .= $key . "/" . $para . "/";
             }
         }
+        $dados = explode('/', substr($_SERVER['REQUEST_URI'], 14), 4);
+    
+        $this->view->assign("LANGUAGE_LINKS", DEFAULT_URL . strtolower($this->controller) . "/" . ($this->action == 'index_action' ? 'index' : $this->action) . "/" . $concatenar);
 
-        $this->view->assign("idiommas", $parametros['idioma']);
-        $this->view->assign("LANGUAGE_LINKS", DEFAULT_URL . $this->controller . "/" . ($this->action == 'index_action' ? 'index' : $this->action) . "/" . $concatenar);
 ############ FIM VERIFICA��O IDIOMAS DISPONIVEIS  ############		
     }
 

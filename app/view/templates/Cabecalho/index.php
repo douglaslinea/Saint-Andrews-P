@@ -130,7 +130,7 @@
                         <li><a href="{view}$URL_DEFAULT{/view}destino-gramado" title="{view}$textos_layout[21]{/view}">{view}$textos_layout[21]{/view}</a></li>
                         <li><a href="{view}$URL_DEFAULT{/view}na-midia" title="{view}$textos_layout[22]{/view}">{view}$textos_layout[22]{/view}</a></li>
                         <li><a href="{view}$URL_DEFAULT{/view}agenda" title="{view}$textos_layout[23]{/view}">{view}$textos_layout[23]{/view}</a></li>
-                        <li><a href="{view}$URL_DEFAULT{/view}noticias" title="{view}$textos_layout[24]{/view}">{view}$textos_layout[24]{/view}</a></li>
+                        <li><a href="{view}$URL_DEFAULT{/view}noticia" title="{view}$textos_layout[24]{/view}">{view}$textos_layout[24]{/view}</a></li>
                         <li><a href="{view}$URL_DEFAULT{/view}contato" title="{view}$textos_layout[25]{/view}">{view}$textos_layout[25]{/view}</a></li>
                         <li class="ultimo"><a href="{view}$URL_DEFAULT{/view}reservas" title="{view}$textos_layout[26]{/view}">{view}$textos_layout[26]{/view}</a></li>
                     </ul>
