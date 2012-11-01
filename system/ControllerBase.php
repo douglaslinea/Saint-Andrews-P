@@ -272,22 +272,38 @@ Abstract class ControllerBase {
 
 ############DEFININDO TODOS OS LINKS DOS IDIOMAS DISPONIVEIS ############
         $parametros = $this->getParam();
-        print_r($parametros);
         $concatenar = "";
-    
+
         foreach ($parametros as $key => $para) {
             if ($key != "idioma") {
 
                 $concatenar .= $key . "/" . $para . "/";
             }
         }
-        $dados = explode('/', substr($_SERVER['REQUEST_URI'], 14), 4);
-    
+
         $this->view->assign("LANGUAGE_LINKS", DEFAULT_URL . strtolower($this->controller) . "/" . ($this->action == 'index_action' ? 'index' : $this->action) . "/" . $concatenar);
 
-############ FIM VERIFICA��O IDIOMAS DISPONIVEIS  ############		
-    }
+############ FIM VERIFICA��O IDIOMAS DISPONIVEIS  ############	
+        $url = null;
+        if ($parametros['idioma']) {
+            if ($this->controller != "Index") {
+                $url.= strtolower($this->controller) . "/";
+            }
 
+            if ($this->action != "index_action") {
+                $url.=$this->action . "/";
+            }
+
+            foreach ($parametros as $key => $valor) {
+                if ($key != "idioma") {
+                    $url.=$valor;
+                }
+            }
+
+            $parametros['idioma'] = "";
+            header("Location:" . DEFAULT_URL . $url);
+        }
+    }
     /**
      * Configura as constantes do Rodap� 
      */
@@ -372,7 +388,7 @@ Abstract class ControllerBase {
     }
 
 //setar todas as linguagem da WebSiteInfo
-    public function getIdioma() {
+    private function getIdioma() {
 
         $dados = TableFactory::getInstance('WebsiteIdiomas')->getIdiomas();
 
