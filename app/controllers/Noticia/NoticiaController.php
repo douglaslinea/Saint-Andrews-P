@@ -1,12 +1,12 @@
 <?php
 
-class NoticiasController extends ControllerBase {
+class NoticiaController extends ControllerBase {
     /* M�todo Construtor do Controller(Obrigat�rio Conter em Todos os Controllers)
      * Params String Action -> A��o a ser Executada Pelo Controller
      * Aten��o Demais M�todos do Controller Devem ser Privados
      */
 
-    public function NoticiasController($controller, $action, $urlparams) {
+    public function NoticiaController($controller, $action, $urlparams) {
         //Inicializa os par�metros da SuperClasse
         parent::ControllerBase($controller, $action, $urlparams);
         //Envia o Controller para a action solicitada
@@ -14,7 +14,7 @@ class NoticiasController extends ControllerBase {
     }
 
     private function index_action() {
-        //Solicita os dados
+//Solicita os dados
         $resultado = $this->Delegator('ConcreteNoticia', 'SelectNoticias');
 
         //Coloca o Helper na View
@@ -22,15 +22,13 @@ class NoticiasController extends ControllerBase {
 
         //Leva os dados para a view
         $this->View()->assign('dados_noticias', $resultado);
-
         //Exibe a view
+
         $this->View()->display('index.php');
     }
 
     private function detalhes() {
 
-        print_r("OI");
-        exit;
         //pega o id do permalink
         $id = HelperFactory::getInstance()->getPermalink();
 
@@ -38,7 +36,7 @@ class NoticiasController extends ControllerBase {
         if ($id !== false && is_numeric($id)) {
             //pega o permalink por inteiro
             $permalink = HelperFactory::getInstance()->getPermalink(true);
-
+           
             //Seleciona os dados do id
             $resultado = $this->Delegator('ConcreteNoticia', 'SelectNoticiasId', array('permalink' => $permalink));
 
