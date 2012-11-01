@@ -31,10 +31,12 @@
 {view}foreach from=$dados_noticias_mais_dados item=noticias_mais_dados{/view}
 
 <li>
+
 {view}$noticias_mais_dados.dat_data{/view}<br />
 {view}$noticias_mais_dados.txt_titulo{/view}<br />
 {view}$Helper->reduzir_string($noticias_mais_dados.txt_texto,200){/view}<br />
-<a href="{view}$URL_DEFAULT{/view}noticia/detalhes/{view}$noticias_mais_dados.txt_permalink{/view}">ver not&iacute;cia &raquo;</a>
+<a href="{view}$URL_DEFAULT{/view}noticia/detalhes/{view}$dados_noticias_mais_dados.txt_permalink{/view}">ver not&iacute;cia &raquo;</a>
+
 </li>
 
 {view}/foreach{/view}
